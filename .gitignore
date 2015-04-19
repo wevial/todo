@@ -1,5 +1,7 @@
 db.sqlite3
 __pycache__
 *.pyc
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+Session.vim
 *~
-*.swp
