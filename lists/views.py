@@ -1,8 +1,18 @@
 from django.shortcuts import redirect, render
 from django.core.exceptions import ValidationError
 
+# Appendix B
+from django.views.generic import FormView
+
 from lists.forms import ExistingListItemForm, ItemForm
 from lists.models import Item, List
+
+
+# Appendix B
+class HomePageView(FormView):
+    template_name = 'home.html'
+    form_class = ItemForm
+
 
 def home_page(request):
     return render(request, 'home.html', {'form': ItemForm()})
