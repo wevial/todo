@@ -1,6 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
+
+from lists.views import NewListView, ViewAndAddToList
 
 urlpatterns = patterns('',
-    url(r'^(\d+)/$', 'lists.views.view_list', name='view_list'),
-    url(r'^new$', 'lists.views.new_list', name='new_list'),
+#    url(r'^(\d+)/$', 'lists.views.view_list', name='view_list'),
+    url(r'^(?P<pk>\d+)/$', ViewAndAddToList.as_view(), name='view_list'),
+    url(r'^new$', NewListView.as_view(), name='new_list'),
 )
