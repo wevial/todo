@@ -5,7 +5,7 @@ def find_dupes(apps, schema_editor):
     List = apps.get_model("lists", "List")
     for list_ in List.objects.all():
         items = list_.item_set.all()
-        text = set()
+        texts = set()
         for ix, item in enumerate(items):
             if item.text in texts:
                 item.text = '{} ({})'.format(item.text, ix)
